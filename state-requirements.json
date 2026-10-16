@@ -1,0 +1,1852 @@
+[
+  {
+    "code": "AL",
+    "name": "Alabama",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 4.0
+      },
+      {
+        "name": "Science",
+        "credits": 4.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.5
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 3.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 2.5
+      },
+      {
+        "name": "Career Preparedness",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "Ala. Admin. Code 290-3-1-.02; \n; \n Link ; \n; \n;",
+    "officialSourceUrl": "https://www.alabamaachieves.org/graduation-requirements/",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "AK",
+    "name": "Alaska",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 2.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 8.0
+      }
+    ],
+    "sourceCitation": "Alaska Admin. Code tit. 4, § 06.075",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "AZ",
+    "name": "Arizona",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Fine Arts or CTE",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 7.0
+      }
+    ],
+    "sourceCitation": "Ariz. Admin. Code R7-2-302; \n; \nAriz. Rev. Stat. Ann. § 15-701.01",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "AR",
+    "name": "Arkansas",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 0.5
+      },
+      {
+        "name": "CTE or Additional Electives",
+        "credits": 6.0
+      },
+      {
+        "name": "Oral Communication",
+        "credits": 0.5
+      }
+    ],
+    "sourceCitation": "Code Ark. R. 005.28.6 App. A; \n; \n Link ; \n; \nArk. Code Ann. § 6-16-1406 ; \n; \nArk. Code Ann. § 6-16-143",
+    "officialSourceUrl": "https://dese.ade.arkansas.gov/Offices/learning-services/curriculum-support/arkansas-graduation-requirements",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "CA",
+    "name": "California",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 3.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 2.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 2.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "Link ; \n; \nCal. Educ. Code § 51225.3; \n; \nCal. Educ. Code § 51228; \n; \nA.B. 101 (2021); \n; \nCal. Educ. Code § 51225.6; \n;",
+    "officialSourceUrl": "https://www.cde.ca.gov/ci/gs/hs/hsgrmin.asp",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "CO",
+    "name": "Colorado",
+    "requirements": [
+      {
+        "name": "Civic Education",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "Colo. Rev. Stat. Ann. § 22-2-106; \n; \nColo. Rev. Stat. Ann. § 22-1-104; \n; \nColo. Rev. Stat. Ann. § 22-1-104.7; \n; \n Link",
+    "officialSourceUrl": "https://www.cde.state.co.us/postsecondary/graduationguidelinesmenuofoptions09-21-22pdf",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023",
+    "referenceNote": "Colorado statewide guidance does not set a single statewide credit schedule; local districts establish course requirements."
+  },
+  {
+    "code": "CT",
+    "name": "Connecticut",
+    "requirements": [
+      {
+        "name": "Science, Technology, Engineering and Mathematics",
+        "credits": 9.0
+      },
+      {
+        "name": "Humanities",
+        "credits": 9.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      },
+      {
+        "name": "Languages",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "Conn. Gen. Stat. Ann. § 10-221a",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "DE",
+    "name": "Delaware",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 2.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.5
+      },
+      {
+        "name": "Languages",
+        "credits": 2.0
+      },
+      {
+        "name": "Career Pathway",
+        "credits": 3.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 3.5
+      }
+    ],
+    "sourceCitation": "Code Del. Regs. 505",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "FL",
+    "name": "Florida",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Financial Literacy",
+        "credits": 0.5
+      },
+      {
+        "name": "Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 7.5
+      }
+    ],
+    "sourceCitation": "Fla. Stat. Ann. § 1003.4282",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "GA",
+    "name": "Georgia",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 4.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 3.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 4.0
+      }
+    ],
+    "sourceCitation": "Ga. Comp. R. & Regs. 160-4-2-.48",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "HI",
+    "name": "Hawaii",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 4.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.5
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 2.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 6.0
+      },
+      {
+        "name": "Transition Planning",
+        "credits": 0.5
+      }
+    ],
+    "sourceCitation": "Hawaii Board of Education Policy 102-15; \n; \n Link",
+    "officialSourceUrl": "https://www.hawaiipublicschools.org/TeachingAndLearning/StudentLearning/GraduationRequirements/Pages/Requirements.aspx",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "ID",
+    "name": "Idaho",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 9.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 6.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 5.0
+      },
+      {
+        "name": "Science",
+        "credits": 6.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages or Fine Arts",
+        "credits": 2.0
+      }
+    ],
+    "sourceCitation": "Idaho Admin. Code r. 08.02.03.105",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "IL",
+    "name": "Illinois",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 2.0
+      },
+      {
+        "name": "Science",
+        "credits": 2.0
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "105 Ill. Comp. Stat. Ann. 5/27-22",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "IN",
+    "name": "Indiana",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 8.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 6.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 6.0
+      },
+      {
+        "name": "Science",
+        "credits": 6.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 3.0
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 5.0
+      }
+    ],
+    "sourceCitation": "511 Ind. Admin. Code 6-7.1-5; \n; \n Link",
+    "officialSourceUrl": "https://www.in.gov/doe/students/graduation-pathways/diploma-requirements/",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "IA",
+    "name": "Iowa",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "Iowa Admin. Code r. 281-12.5(256)",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "KS",
+    "name": "Kansas",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 6.0
+      }
+    ],
+    "sourceCitation": "Kan. Admin. Regs. 91-31-35",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "KY",
+    "name": "Kentucky",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Visual/Performing Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 6.0
+      }
+    ],
+    "sourceCitation": "704 Ky. Admin. Regs. 3:305; \n;",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "LA",
+    "name": "Louisiana",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 4.0
+      },
+      {
+        "name": "Science",
+        "credits": 4.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      },
+      {
+        "name": "Foreign Language",
+        "credits": 2.0
+      },
+      {
+        "name": "Art",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 3.0
+      }
+    ],
+    "sourceCitation": "28 La. Admin. Code Pt CXV, 2318;",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "ME",
+    "name": "Maine",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 2.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 2.0
+      },
+      {
+        "name": "Science",
+        "credits": 2.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "Me. Rev. Stat. tit. 20-A, § 4722",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "MD",
+    "name": "Maryland",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Technology Education",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages, Advanced Technology Education, or CTE",
+        "credits": 2.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 3.0
+      }
+    ],
+    "sourceCitation": "Md. Code Regs. 13A.03.02.03; \n; \nMd. Code Regs. 13A.03.02.04; \n ; \nMd. Code Regs. 13A.03.02.05; \n; \n;",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "MA",
+    "name": "Massachusetts",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Foreign Language",
+        "credits": 2.0
+      },
+      {
+        "name": "Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 5.0
+      }
+    ],
+    "sourceCitation": "Mass. Gen. Laws Ann. ch. 69 § 1D; \n; \nMass. Gen. Laws Ann. ch. 71 § 2; \n; \nMass. Gen. Laws Ann. ch. 71 § 3; \n; \n Link",
+    "officialSourceUrl": "https://www.doe.mass.edu/ccte/ccr/masscore/",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023",
+    "referenceNote": "Massachusetts graduation requirements are set by local boards. MassCore is a state-recommended program, not a statewide mandate."
+  },
+  {
+    "code": "MI",
+    "name": "Michigan",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Visual, Performing, or Applied Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages",
+        "credits": 2.0
+      }
+    ],
+    "sourceCitation": "Mich. Comp. Laws Ann. § 380.1278a; \n; \nMich. Comp. Laws Ann. § 380.1278b; \n ; \nMich. Comp. Laws Ann. § 380.1166",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "MN",
+    "name": "Minnesota",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.5
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 7.0
+      }
+    ],
+    "sourceCitation": "Minn. Stat. Ann. § 120B.024",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "MS",
+    "name": "Mississippi",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.5
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "College and Career Readiness",
+        "credits": 1.0
+      },
+      {
+        "name": "Technology or Computer Science",
+        "credits": 1.0
+      },
+      {
+        "name": "Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 5.5
+      }
+    ],
+    "sourceCitation": "Miss. Code. Ann. § 37-16-7; \n; \nCode Miss. R. 7-3-36;",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "MO",
+    "name": "Missouri",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education",
+        "credits": 1.0
+      },
+      {
+        "name": "Health",
+        "credits": 0.5
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Practical Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Personal Finance",
+        "credits": 0.5
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 7.0
+      }
+    ],
+    "sourceCitation": "5 Mo. Code Regs. Ann. 20-100.190; \n; \n Link",
+    "officialSourceUrl": "https://dese.mo.gov/media/pdf/graduation-requirements-0",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "MT",
+    "name": "Montana",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 2.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 2.0
+      },
+      {
+        "name": "Science",
+        "credits": 2.0
+      },
+      {
+        "name": "Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "CTE",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 7.0
+      }
+    ],
+    "sourceCitation": "MT ADC 10.55.905",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "NE",
+    "name": "Nebraska",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      }
+    ],
+    "sourceCitation": "92 Neb. Admin. Code Ch. 10, 003; \n; \nNeb. Rev. Stat. Ann. § 79-729",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "NV",
+    "name": "Nevada",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 2.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.5
+      },
+      {
+        "name": "College and Career Readiness",
+        "credits": 2.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 6.0
+      }
+    ],
+    "sourceCitation": "Nev. Admin. Code 390.440; \n; \nNev. Rev. Stat. Ann. § 389.018 ; \n; \n Link",
+    "officialSourceUrl": "https://doe.nv.gov/uploadedFiles/ndedoenvgov/content/High_School_Graduation/Documents/2022-2024NevadaDiplomaRequirements.pdf",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "NH",
+    "name": "New Hampshire",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 2.5
+      },
+      {
+        "name": "Science",
+        "credits": 2.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.5
+      },
+      {
+        "name": "Arts",
+        "credits": 0.5
+      },
+      {
+        "name": "Digital Literacy",
+        "credits": 0.5
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 6.0
+      }
+    ],
+    "sourceCitation": "NH ADC Ed 306.27",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "NJ",
+    "name": "New Jersey",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 20.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 15.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 15.0
+      },
+      {
+        "name": "Science",
+        "credits": 15.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 3.75
+      },
+      {
+        "name": "Financial Literacy",
+        "credits": 2.5
+      }
+    ],
+    "sourceCitation": "N.J. Admin. Code § 6A:8-5.1; \n ; \nN.J. Admin. Code § 18A:35-1",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "NM",
+    "name": "New Mexico",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.5
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Career Cluster, Workplace Readiness, or language",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 7.5
+      }
+    ],
+    "sourceCitation": "N.M. Stat. Ann. § 22-13-1.1; \n; \n Link",
+    "officialSourceUrl": "https://webnew.ped.state.nm.us/bureaus/college-career-readiness/graduation/",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "NY",
+    "name": "New York",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 4.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.5
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "World Language",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 3.5
+      }
+    ],
+    "sourceCitation": "N.Y. Comp. Codes R. & Regs. tit. 8, § 100.5; \n; \n Link",
+    "officialSourceUrl": "https://www.nysed.gov/curriculum-instruction/general-education-and-diploma-requirements",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "NC",
+    "name": "North Carolina",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 4.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 2.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 4.0
+      }
+    ],
+    "sourceCitation": "North Carolina State Board of Education Policy GRAD-004",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "ND",
+    "name": "North Dakota",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 3.0
+      },
+      {
+        "name": "Computer Science or Cyber Security",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 5.0
+      }
+    ],
+    "sourceCitation": "N.D. Cent. Code Ann. § 15.1-21-02.2 ; \n; \n Link",
+    "officialSourceUrl": "https://ndlegis.gov/assembly/68-2023/regular/bill-overview/bo1398.html?bill_year=2023&bill_number=1398",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "OH",
+    "name": "Ohio",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 5.0
+      }
+    ],
+    "sourceCitation": "Ohio Rev. Code Ann. § 3313.603",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "OK",
+    "name": "Oklahoma",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 8.0
+      },
+      {
+        "name": "Computer Technology or World Language",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "Okla. Stat. Ann. tit. 70, § 11-103.6 ; \n; \n Link",
+    "officialSourceUrl": "https://sde.ok.gov/sites/default/files/images/2022CORE_Curriculum-Graph%20%281%29.pdf",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "OR",
+    "name": "Oregon",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 3.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 6.0
+      }
+    ],
+    "sourceCitation": "Or. Admin. R. 581-022-2000; \n; \n Link",
+    "officialSourceUrl": "https://www.oregon.gov/ode/students-and-family/OregonDiploma/Pages/default.aspx",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "PA",
+    "name": "Pennsylvania",
+    "requirements": [],
+    "sourceCitation": "22 Pa. Code § 4.24",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023",
+    "referenceNote": "Pennsylvania policy does not specify statewide credit totals; school districts adopt graduation requirements."
+  },
+  {
+    "code": "RI",
+    "name": "Rhode Island",
+    "requirements": [
+      {
+        "name": "English",
+        "credits": 4.0
+      },
+      {
+        "name": "Math",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "English",
+        "credits": 4.0
+      },
+      {
+        "name": "Math",
+        "credits": 4.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "World Languages",
+        "credits": 2.0
+      },
+      {
+        "name": "College Preparatory Coursework",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "200-RICR-20-10-2; \n; \n Link",
+    "officialSourceUrl": "https://www.ride.ri.gov/Portals/0/Uploads/Documents/Secondary%20Regulations/Secondary%20Regulations%20-%20Clean%20Version%20-%2011.16.22%20.pdf?ver=vsoGVwR3aTiCgPN6-k_vJQ%3d%3d",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "SC",
+    "name": "South Carolina",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education or JROTC or Marching Band with PE",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages or CTE",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 6.5
+      },
+      {
+        "name": "Computer Science",
+        "credits": 1.0
+      },
+      {
+        "name": "Personal Finance",
+        "credits": 0.5
+      }
+    ],
+    "sourceCitation": "S.C. Code Ann. Regs. 43-234; \n; \n Link",
+    "officialSourceUrl": "https://ed.sc.gov/districts-schools/state-accountability/high-school-courses-and-requirements/",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "SD",
+    "name": "South Dakota",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages, Capstone Experience or CTE",
+        "credits": 1.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Personal Finance or Economics",
+        "credits": 0.5
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 5.5
+      }
+    ],
+    "sourceCitation": "S.D. Admin. R. 24:43:11:02; \n; \n Link",
+    "officialSourceUrl": "https://doe.sd.gov/gradrequirements/",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "TN",
+    "name": "Tennessee",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 1.5
+      },
+      {
+        "name": "Languages",
+        "credits": 2.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Personal Finance",
+        "credits": 0.5
+      },
+      {
+        "name": "Computer Science",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 3.0
+      }
+    ],
+    "sourceCitation": "Tenn. Comp. R. & Regs. 0520-01-03-.06; \n;",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "TX",
+    "name": "Texas",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages",
+        "credits": 2.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 5.0
+      }
+    ],
+    "sourceCitation": "19 Tex. Admin. Code § 74.11; \n; \n19 Tex. Admin. Code § 74.12",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "UT",
+    "name": "Utah",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.5
+      },
+      {
+        "name": "CTE",
+        "credits": 1.0
+      },
+      {
+        "name": "Digital Studies",
+        "credits": 0.5
+      },
+      {
+        "name": "General Financial Literacy",
+        "credits": 0.5
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 5.5
+      }
+    ],
+    "sourceCitation": "Utah Admin. Code r. R277-700-6; \n; \n Link",
+    "officialSourceUrl": "https://www.schools.utah.gov/curr/graduationrequirements?mid=1014&tid=2",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "VT",
+    "name": "Vermont",
+    "requirements": [],
+    "sourceCitation": "7-1 Vt. Code R. § 2",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023",
+    "referenceNote": "Vermont uses proficiency-based graduation requirements rather than a statewide credit schedule."
+  },
+  {
+    "code": "VA",
+    "name": "Virginia",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Laboratory Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      },
+      {
+        "name": "Languages, Fine Arts, or CTE",
+        "credits": 2.0
+      },
+      {
+        "name": "Economics & Personal Finance",
+        "credits": 1.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 4.0
+      }
+    ],
+    "sourceCitation": "8 Va. Admin. Code 20-131-51; \n; \n Link",
+    "officialSourceUrl": "https://www.doe.virginia.gov/parents-students/for-students/graduation/diploma-options/standard-diploma-graduation-requirements",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "WA",
+    "name": "Washington",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 2.0
+      },
+      {
+        "name": "CTE",
+        "credits": 1.0
+      },
+      {
+        "name": "Languages",
+        "credits": 2.0
+      },
+      {
+        "name": "Additional Electives",
+        "credits": 4.0
+      }
+    ],
+    "sourceCitation": "Wash. Admin. Code 180-51-068; \n; \n Link",
+    "officialSourceUrl": "https://www.k12.wa.us/student-success/graduation/graduation-requirements/credit-requirements",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "WV",
+    "name": "West Virginia",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 4.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 4.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      },
+      {
+        "name": "Fine Arts",
+        "credits": 1.0
+      }
+    ],
+    "sourceCitation": "W. Va. Code R. 126-42-6; \n; \n Link",
+    "officialSourceUrl": "https://wvde.us/middle-secondary-learning/policy-resources/",
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "WI",
+    "name": "Wisconsin",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      },
+      {
+        "name": "Physical Education & Health",
+        "credits": 2.0
+      }
+    ],
+    "sourceCitation": "Wis. Stat. Ann. § 118.33 ; \n;",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  },
+  {
+    "code": "WY",
+    "name": "Wyoming",
+    "requirements": [
+      {
+        "name": "English/Language Arts",
+        "credits": 4.0
+      },
+      {
+        "name": "Mathematics",
+        "credits": 3.0
+      },
+      {
+        "name": "Social Studies",
+        "credits": 3.0
+      },
+      {
+        "name": "Science",
+        "credits": 3.0
+      }
+    ],
+    "sourceCitation": "Wyo. Stat. Ann. § 21-2-304",
+    "officialSourceUrl": null,
+    "comparisonUrl": "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04",
+    "comparisonDate": "May 2023"
+  }
+]

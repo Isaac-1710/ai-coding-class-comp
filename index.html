@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f7f7f1" />
+    <meta name="description" content="A clear, family-friendly homeschool graduation planner." />
+    <title>GradPath Homeschool</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js"></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <section class="auth-shell" id="auth-shell" aria-labelledby="auth-title">
+      <div class="auth-card">
+        <a class="brand" href="./" aria-label="GradPath Homeschool home">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span>GradPath <span class="brand-light">Homeschool</span></span>
+        </a>
+        <p class="eyebrow">A CLEAR PATH THROUGH HIGH SCHOOL</p>
+        <h1 id="auth-title">Your family's graduation plan.</h1>
+        <p class="muted">Sign in to view your family's private records. Accounts are invite-only.</p>
+        <form id="sign-in-form">
+          <label for="auth-email">Email address</label>
+          <input id="auth-email" name="email" type="email" autocomplete="email" required />
+          <label for="auth-password">Password</label>
+          <input id="auth-password" name="password" type="password" autocomplete="current-password" required />
+          <button class="button primary full-width" type="submit">Sign in</button>
+        </form>
+        <form id="password-update-form" hidden>
+          <label for="new-password">New password</label>
+          <input id="new-password" name="new-password" type="password" minlength="8" autocomplete="new-password" required />
+          <label for="confirm-password">Confirm new password</label>
+          <input id="confirm-password" name="confirm-password" type="password" minlength="8" autocomplete="new-password" required />
+          <button class="button primary full-width" type="submit">Save password</button>
+        </form>
+        <button class="text-button" id="reset-password" type="button">Forgot your password?</button>
+        <p class="form-message" id="auth-message" role="status" aria-live="polite"></p>
+        <p class="setup-notice" id="backend-notice" hidden>Cloud sign-in is not configured yet. Set the Supabase project values in <code>config.js</code> to enable family accounts.</p>
+      </div>
+    </section>
+
+    <div class="app-shell" id="app-shell" hidden>
+      <aside class="sidebar">
+        <a class="brand" href="./" aria-label="GradPath Homeschool home">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span>GradPath <span class="brand-light">Homeschool</span></span>
+        </a>
+        <label class="sidebar-label" for="state-select">FAMILY STATE</label>
+        <select id="state-select" class="select-input"></select>
+        <p class="source-note" id="state-source-note"></p>
+        <button class="text-button" id="grading-settings" type="button">Grading scale</button>
+        <div class="students-heading">
+          <p class="sidebar-label">STUDENTS</p>
+          <button class="icon-button" id="add-student" type="button" aria-label="Add a student">+</button>
+        </div>
+        <ul class="student-nav" id="student-nav"></ul>
+        <div class="sidebar-bottom">
+          <p>Made for your family's learning journey.</p>
+          <button class="text-button" id="sign-out" type="button">Sign out</button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>My homeschool</span><span aria-hidden="true">/</span><strong id="breadcrumb-name">Family overview</strong></div>
+          <div class="topbar-actions">
+            <span class="privacy-label"><span class="privacy-dot" aria-hidden="true"></span> Private family account</span>
+            <button class="button outline" id="print-report" type="button">Print / save report</button>
+          </div>
+        </header>
+
+        <section class="page-intro">
+          <div>
+            <p class="eyebrow">A PLAN THAT GROWS WITH YOUR FAMILY</p>
+            <h1 id="page-title">Graduation progress</h1>
+            <p class="muted" id="page-subtitle">Choose a student to see their courses and credit progress.</p>
+          </div>
+          <div class="intro-actions">
+            <button class="button outline" id="add-student-main" type="button">+ Add student</button>
+            <button class="button primary" id="add-course" type="button">+ Add a class</button>
+          </div>
+        </section>
+
+        <div class="notice" id="app-message" role="status" aria-live="polite"></div>
+        <section class="state-disclaimer" id="state-disclaimer" aria-label="About state requirements"></section>
+
+        <section class="dashboard-grid" aria-label="Graduation credit summary">
+          <article class="summary-card accent">
+            <p class="summary-label">CREDITS COMPLETED</p>
+            <p class="summary-value" id="credits-completed">0</p>
+            <p class="summary-caption">Completed classes</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-label">PLAN CREDITS</p>
+            <p class="summary-value" id="credits-required">0</p>
+            <p class="summary-caption" id="required-caption">Credits in family plan</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-label">CREDITS TO GO</p>
+            <p class="summary-value" id="credits-remaining">0</p>
+            <p class="summary-caption">Based on your requirements</p>
+          </article>
+          <article class="summary-card">
+            <p class="summary-label">OVERALL AVERAGE</p>
+            <p class="summary-value" id="overall-average">—</p>
+            <p class="summary-caption">Weighted by class credits</p>
+          </article>
+        </section>
+
+        <section class="content-section" aria-labelledby="requirements-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">YOUR GRADUATION PLAN</p>
+              <h2 id="requirements-title">Credits by subject</h2>
+            </div>
+            <button class="button outline" id="add-requirement" type="button">+ Add requirement</button>
+          </div>
+          <div class="requirements-list" id="requirements-list"></div>
+        </section>
+
+        <section class="content-section" aria-labelledby="courses-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">COURSES AND GRADES</p>
+              <h2 id="courses-title">Classes <span id="student-name"></span></h2>
+            </div>
+            <label class="visually-hidden" for="course-filter">Filter courses</label>
+            <select class="select-input filter-select" id="course-filter">
+              <option value="all">All classes</option>
+              <option value="planned">Planned</option>
+              <option value="in_progress">In progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+          <div class="course-list" id="course-list"></div>
+          <div class="empty-state" id="empty-state" hidden>
+            <h3>Start with a class</h3>
+            <p>Add a course to see it alongside this student's graduation requirements.</p>
+            <button class="button primary" id="empty-add-course" type="button">+ Add a class</button>
+          </div>
+        </section>
+        <footer class="page-footer">State profiles are references, not homeschool legal advice.</footer>
+      </main>
+    </div>
+
+    <dialog class="modal" id="student-dialog" aria-labelledby="student-dialog-title">
+      <form class="modal-form" id="student-form">
+        <div class="modal-heading"><div><p class="eyebrow">YOUR FAMILY</p><h2 id="student-dialog-title">Add a student</h2></div><button class="icon-button close-modal" type="button" data-close="student-dialog" aria-label="Close">×</button></div>
+        <label for="student-name-input">Student name</label>
+        <input id="student-name-input" name="name" maxlength="60" autocomplete="off" required />
+        <label for="student-grade">Current grade level</label>
+        <select id="student-grade" name="grade" required>
+          <option value="">Choose a grade</option>
+          <option value="9">9th grade</option><option value="10">10th grade</option><option value="11">11th grade</option><option value="12">12th grade</option>
+        </select>
+        <label for="graduation-year">Expected graduation year <span class="optional">(optional)</span></label>
+        <input id="graduation-year" name="graduation_year" type="number" min="2025" max="2100" />
+        <p class="form-message" id="student-error" role="alert"></p>
+        <div class="modal-actions"><button class="button outline" type="button" data-close="student-dialog">Cancel</button><button class="button primary" type="submit">Add student</button></div>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="course-dialog" aria-labelledby="course-dialog-title">
+      <form class="modal-form" id="course-form">
+        <div class="modal-heading"><div><p class="eyebrow">COURSE RECORD</p><h2 id="course-dialog-title">Add a class</h2></div><button class="icon-button close-modal" type="button" data-close="course-dialog" aria-label="Close">×</button></div>
+        <label for="course-title">Class name</label>
+        <input id="course-title" name="title" maxlength="100" placeholder="e.g. Algebra I" required />
+        <label for="course-requirement">Subject / requirement category</label>
+        <select id="course-requirement" name="requirement_id" required></select>
+        <label for="course-suggestions">Examples for this category</label>
+        <p class="field-hint" id="course-suggestions">Suggested classes are examples. Parents decide how their courses fit the family plan.</p>
+        <div class="form-row">
+          <div><label for="course-credits">Credits</label><input id="course-credits" name="credits" type="number" min="0.5" max="10" step="0.5" value="1" required /></div>
+          <div><label for="course-status">Status</label><select id="course-status" name="status"><option value="planned">Planned</option><option value="in_progress">In progress</option><option value="completed">Completed</option></select></div>
+        </div>
+        <div class="form-row">
+          <div><label for="course-year">School year</label><input id="course-year" name="school_year" maxlength="20" placeholder="2026–2027" required /></div>
+          <div><label for="course-grade-percent">Current grade (%) <span class="optional">optional</span></label><input id="course-grade-percent" name="grade_percent" type="number" min="0" max="100" step="0.1" placeholder="92" /></div>
+        </div>
+        <p class="field-hint" id="letter-grade-preview">Enter a percentage to see the letter grade.</p>
+        <p class="form-message" id="course-error" role="alert"></p>
+        <div class="modal-actions"><button class="button outline" type="button" data-close="course-dialog">Cancel</button><button class="button primary" type="submit">Save class</button></div>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="requirement-dialog" aria-labelledby="requirement-dialog-title">
+      <form class="modal-form" id="requirement-form">
+        <div class="modal-heading"><div><p class="eyebrow">FAMILY GRADUATION PLAN</p><h2 id="requirement-dialog-title">Add a requirement</h2></div><button class="icon-button close-modal" type="button" data-close="requirement-dialog" aria-label="Close">×</button></div>
+        <label for="requirement-name">Subject / category</label>
+        <input id="requirement-name" name="name" maxlength="80" required />
+        <label for="requirement-credits">Credits required</label>
+        <input id="requirement-credits" name="required_credits" type="number" min="0" max="100" step="0.5" required />
+        <p class="form-message" id="requirement-error" role="alert"></p>
+        <div class="modal-actions"><button class="button outline" type="button" data-close="requirement-dialog">Cancel</button><button class="button primary" type="submit">Save requirement</button></div>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="grading-dialog" aria-labelledby="grading-dialog-title">
+      <form class="modal-form" id="grading-form">
+        <div class="modal-heading"><div><p class="eyebrow">FAMILY SETTINGS</p><h2 id="grading-dialog-title">Letter-grade cutoffs</h2></div><button class="icon-button close-modal" type="button" data-close="grading-dialog" aria-label="Close">×</button></div>
+        <p class="field-hint">A letter grade is calculated from the percentage entered for each class.</p>
+        <div class="form-row">
+          <div><label for="cutoff-a">A starts at (%)</label><input id="cutoff-a" name="a" type="number" min="0" max="100" step="1" required /></div>
+          <div><label for="cutoff-b">B starts at (%)</label><input id="cutoff-b" name="b" type="number" min="0" max="100" step="1" required /></div>
+        </div>
+        <div class="form-row">
+          <div><label for="cutoff-c">C starts at (%)</label><input id="cutoff-c" name="c" type="number" min="0" max="100" step="1" required /></div>
+          <div><label for="cutoff-d">D starts at (%)</label><input id="cutoff-d" name="d" type="number" min="0" max="100" step="1" required /></div>
+        </div>
+        <p class="form-message" id="grading-error" role="alert"></p>
+        <div class="modal-actions"><button class="button outline" type="button" data-close="grading-dialog">Cancel</button><button class="button primary" type="submit">Save scale</button></div>
+      </form>
+    </dialog>
+  </body>
+</html>
