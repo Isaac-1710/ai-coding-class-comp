@@ -1,25 +1,24 @@
 # GradPath Homeschool
 
-GradPath is an invite-only homeschool high-school planning app. Parents can keep separate student course records, track completed and planned credits by subject, enter percentage grades, adjust the family's letter-grade cutoffs, and print a progress report.
+GradPath is a browser-based homeschool high-school planner. Track multiple students, customize graduation requirements and grade cutoffs, record courses and grades, and print or save a progress report.
+
+## Use the live app
+
+Open [GradPath Homeschool](https://isaac-1710.github.io/ai-coding-class-comp/). No account or backend setup is required.
+
+## Data and privacy
+
+GradPath saves family records in the browser's local storage on the device where you use it. The data is not uploaded to a server, shared with other devices, or protected by an account login. Anyone with access to that browser profile may be able to use the app and see its records. Clearing browser data or changing browsers/devices can remove or make the records unavailable. Print or save reports regularly if you need a separate copy.
 
 ## Run locally
 
-Serve the repository over HTTP from its root (the app fetches its state reference data):
+Serve the repository over HTTP from its root because the app fetches the state reference data:
 
 ```powershell
 python -m http.server 8000
 ```
 
-Then open `http://localhost:8000`. Sign-in requires a configured Supabase project.
-
-## Configure Supabase
-
-1. Create a Supabase project and run [`supabase-schema.sql`](supabase-schema.sql) in its SQL Editor.
-2. In Supabase Auth settings, disable public sign-ups and invite beta users through the Supabase dashboard. Configure the app URL and password-reset redirect URL to match the deployed site.
-3. Copy the project's **Project URL** and **publishable/anon key** into `config.js`. Never put a service-role key in this browser app.
-4. Deploy the static files to an HTTPS host. Before entering real student records, verify the database policies with separate test accounts and confirm one family cannot read or modify another family's records.
-
-The schema enables row-level security on family, student, requirement, and course records. The `auth.users` trigger creates one family for each invited account. Keep public sign-ups disabled for the invite-only beta. When configured, the app loads the Supabase JavaScript client (v2.118.0) from `esm.sh`; the deployed site must be able to reach that CDN.
+Then open `http://localhost:8000`.
 
 ## State references
 

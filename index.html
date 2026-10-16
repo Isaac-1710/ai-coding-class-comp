@@ -7,40 +7,10 @@
     <meta name="description" content="A clear, family-friendly homeschool graduation planner." />
     <title>GradPath Homeschool</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="config.js"></script>
     <script type="module" src="app.js"></script>
   </head>
   <body>
-    <section class="auth-shell" id="auth-shell" aria-labelledby="auth-title">
-      <div class="auth-card">
-        <a class="brand" href="./" aria-label="GradPath Homeschool home">
-          <span class="brand-mark" aria-hidden="true">G</span>
-          <span>GradPath <span class="brand-light">Homeschool</span></span>
-        </a>
-        <p class="eyebrow">A CLEAR PATH THROUGH HIGH SCHOOL</p>
-        <h1 id="auth-title">Your family's graduation plan.</h1>
-        <p class="muted">Sign in to view your family's private records. Accounts are invite-only.</p>
-        <form id="sign-in-form">
-          <label for="auth-email">Email address</label>
-          <input id="auth-email" name="email" type="email" autocomplete="email" required />
-          <label for="auth-password">Password</label>
-          <input id="auth-password" name="password" type="password" autocomplete="current-password" required />
-          <button class="button primary full-width" type="submit">Sign in</button>
-        </form>
-        <form id="password-update-form" hidden>
-          <label for="new-password">New password</label>
-          <input id="new-password" name="new-password" type="password" minlength="8" autocomplete="new-password" required />
-          <label for="confirm-password">Confirm new password</label>
-          <input id="confirm-password" name="confirm-password" type="password" minlength="8" autocomplete="new-password" required />
-          <button class="button primary full-width" type="submit">Save password</button>
-        </form>
-        <button class="text-button" id="reset-password" type="button">Forgot your password?</button>
-        <p class="form-message" id="auth-message" role="status" aria-live="polite"></p>
-        <p class="setup-notice" id="backend-notice" hidden>Cloud sign-in is not configured yet. Set the Supabase project values in <code>config.js</code> to enable family accounts.</p>
-      </div>
-    </section>
-
-    <div class="app-shell" id="app-shell" hidden>
+    <div class="app-shell" id="app-shell">
       <aside class="sidebar">
         <a class="brand" href="./" aria-label="GradPath Homeschool home">
           <span class="brand-mark" aria-hidden="true">G</span>
@@ -56,8 +26,7 @@
         </div>
         <ul class="student-nav" id="student-nav"></ul>
         <div class="sidebar-bottom">
-          <p>Made for your family's learning journey.</p>
-          <button class="text-button" id="sign-out" type="button">Sign out</button>
+          <p>Records stay in this browser on this device.</p>
         </div>
       </aside>
 
@@ -65,7 +34,7 @@
         <header class="topbar">
           <div class="breadcrumb"><span>My homeschool</span><span aria-hidden="true">/</span><strong id="breadcrumb-name">Family overview</strong></div>
           <div class="topbar-actions">
-            <span class="privacy-label"><span class="privacy-dot" aria-hidden="true"></span> Private family account</span>
+            <span class="privacy-label"><span class="privacy-dot" aria-hidden="true"></span> Saved in this browser</span>
             <button class="button outline" id="print-report" type="button">Print / save report</button>
           </div>
         </header>
@@ -83,6 +52,7 @@
         </section>
 
         <div class="notice" id="app-message" role="status" aria-live="polite"></div>
+        <p class="setup-notice">This app saves records only in this browser. There are no accounts or cloud backups; other devices and browsers won't see your data. Printing a report can help you keep a copy.</p>
         <section class="state-disclaimer" id="state-disclaimer" aria-label="About state requirements"></section>
 
         <section class="dashboard-grid" aria-label="Graduation credit summary">

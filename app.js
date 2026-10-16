@@ -1,4 +1,5 @@
 const STATE_COMPARISON_URL = "https://reports.ecs.org/comparisons/high-school-graduation-requirements-2023-04";
+const STORAGE_KEY = "gradpath-homeschool-data-v1";
 const DEFAULT_GRADING_SCALE = { a: 90, b: 80, c: 70, d: 60 };
 const STATE_SUGGESTIONS = [
   { match: /english|language arts/i, examples: ["English", "American literature", "Composition"] },
@@ -12,29 +13,18 @@ const STATE_SUGGESTIONS = [
   { match: /elective/i, examples: ["Personal finance", "Psychology", "Creative writing"] },
 ];
 
-const config = window.GRADPATH_CONFIG ?? {};
-const authShell = document.querySelector("#auth-shell");
-const appShell = document.querySelector("#app-shell");
-const authMessage = document.querySelector("#auth-message");
-const backendNotice = document.querySelector("#backend-notice");
 const appMessage = document.querySelector("#app-message");
-const signInForm = document.querySelector("#sign-in-form");
-const passwordUpdateForm = document.querySelector("#password-update-form");
-const resetPasswordButton = document.querySelector("#reset-password");
 
-let supabase = null;
 let stateProfiles = [];
 let family = null;
 let students = [];
 let requirements = [];
 let courses = [];
+let recordsByStudent = {};
 let activeStudentId = null;
 let editingCourseId = null;
 let editingRequirementId = null;
-let activeUserId = null;
-let loadingUserId = null;
 let currentFilter = "all";
-let passwordLinkActive = false;
 
 const el = {
   stateSelect: document.querySelector("#state-select"),
@@ -87,9 +77,18 @@ function runSafely(context, action, target = appMessage) {
     });
 }
 
-function handleFormSubmit(event, context, action, target) {
+function handleFormSubmit(event, context, action, target = appMessage) {
   event.preventDefault();
   runSafely(context, () => action(event), target);
+}
+
+function persistFamily() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    version: 1,
+    family,
+    students,
+    recordsByStudent,
+  }));
 }
 
 function formatCredits(value) {
@@ -139,32 +138,6 @@ function suggestedClasses(category) {
 
 function profileRequirements(code) {
   return getProfile(code)?.requirements ?? [];
-}
-
-function showAuth(message = "", isError = false) {
-  appShell.hidden = true;
-  authShell.hidden = false;
-  setMessage(authMessage, message, isError);
-}
-
-function showApp() {
-  authShell.hidden = true;
-  appShell.hidden = false;
-}
-
-function setPasswordUpdateMode(message = "") {
-  signInForm.hidden = true;
-  passwordUpdateForm.hidden = false;
-  resetPasswordButton.hidden = true;
-  document.querySelector("#auth-title").textContent = "Choose a new password";
-  setMessage(authMessage, message);
-}
-
-function resetAuthMode() {
-  signInForm.hidden = false;
-  passwordUpdateForm.hidden = true;
-  resetPasswordButton.hidden = false;
-  document.querySelector("#auth-title").textContent = "Your family's graduation plan.";
 }
 
 function updateStateSelector() {
@@ -412,21 +385,6 @@ function renderDashboard() {
   document.querySelector("#add-requirement").disabled = !student;
 }
 
-async function loadFamily() {
-  const { data, error } = await supabase
-    .from("families")
-    .select("id, owner_id, state_code, grading_scale")
-    .maybeSingle();
-  if (error) throw error;
-  if (!data) throw new Error("This account has no family record. Check that the Supabase setup SQL and account trigger were installed.");
-  family = {
-    ...data,
-    grading_scale: normalizeScale(data.grading_scale),
-  };
-  updateStateSelector();
-  await loadStudents();
-}
-
 function normalizeScale(scale) {
   const candidate = scale && typeof scale === "object" ? scale : DEFAULT_GRADING_SCALE;
   const normalized = {
@@ -443,19 +401,41 @@ function isValidScale(scale) {
     Number(scale.a) > Number(scale.b) && Number(scale.b) > Number(scale.c) && Number(scale.c) > Number(scale.d);
 }
 
-async function loadStudents() {
-  const { data, error } = await supabase
-    .from("students")
-    .select("id, family_id, name, grade_level, graduation_year, created_at")
-    .eq("family_id", family.id)
-    .order("created_at", { ascending: true });
-  if (error) throw error;
-  students = data ?? [];
-  if (!students.some((student) => student.id === activeStudentId)) activeStudentId = students[0]?.id ?? null;
-  await loadStudentData();
+function loadFamily() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved === null) {
+    family = {
+      id: crypto.randomUUID(),
+      state_code: null,
+      grading_scale: { ...DEFAULT_GRADING_SCALE },
+    };
+    students = [];
+    recordsByStudent = {};
+    persistFamily();
+  } else {
+    const data = JSON.parse(saved);
+    if (data?.version !== 1 || !data.family || !Array.isArray(data.students) ||
+      !data.recordsByStudent || typeof data.recordsByStudent !== "object" || Array.isArray(data.recordsByStudent)) {
+      throw new Error("Saved GradPath data is invalid or from an unsupported version. It was left unchanged.");
+    }
+    family = {
+      id: data.family.id,
+      state_code: data.family.state_code ?? null,
+      grading_scale: normalizeScale(data.family.grading_scale),
+    };
+    students = data.students;
+    recordsByStudent = data.recordsByStudent;
+    if (students.some((student) => !student?.id || !Array.isArray(recordsByStudent[student.id]?.requirements) ||
+      !Array.isArray(recordsByStudent[student.id]?.courses))) {
+      throw new Error("Saved student records are incomplete or invalid. They were left unchanged.");
+    }
+  }
+  activeStudentId = students[0]?.id ?? null;
+  updateStateSelector();
+  loadStudentData();
 }
 
-async function loadStudentData() {
+function loadStudentData() {
   const student = getStudent();
   if (!student) {
     requirements = [];
@@ -463,50 +443,10 @@ async function loadStudentData() {
     renderDashboard();
     return;
   }
-  const [requirementsResult, coursesResult] = await Promise.all([
-    supabase.from("requirements").select("id, student_id, name, required_credits, sort_order").eq("student_id", student.id).order("sort_order"),
-    supabase.from("courses").select("id, student_id, requirement_id, title, credits, status, grade_percent, school_year, created_at").eq("student_id", student.id).order("created_at"),
-  ]);
-  if (requirementsResult.error) throw requirementsResult.error;
-  if (coursesResult.error) throw coursesResult.error;
-  if (activeStudentId !== student.id) return;
-  requirements = requirementsResult.data ?? [];
-  courses = coursesResult.data ?? [];
+  const records = recordsByStudent[student.id];
+  requirements = [...records.requirements].sort((a, b) => a.sort_order - b.sort_order);
+  courses = [...records.courses];
   renderDashboard();
-}
-
-async function handleSession(session) {
-  if (!session) {
-    activeUserId = null;
-    loadingUserId = null;
-    activeStudentId = null;
-    family = null;
-    students = [];
-    requirements = [];
-    courses = [];
-    resetAuthMode();
-    showAuth();
-    return;
-  }
-  if (activeUserId === session.user.id && family) {
-    showApp();
-    return;
-  }
-  if (loadingUserId === session.user.id) return;
-  loadingUserId = session.user.id;
-  try {
-    await loadFamily();
-    activeUserId = session.user.id;
-    showApp();
-    setMessage(appMessage, "");
-    renderDashboard();
-  } catch (error) {
-    console.error("Could not load the signed-in family:", error);
-    setMessage(authMessage, `We couldn't load this family's records: ${error.message}`, true);
-    await supabase.auth.signOut();
-  } finally {
-    loadingUserId = null;
-  }
 }
 
 async function initialize() {
@@ -517,133 +457,13 @@ async function initialize() {
     throw new Error("The state reference file must contain exactly 50 state profiles.");
   }
 
-  if (!config.supabaseUrl || !config.supabaseAnonKey) {
-    backendNotice.hidden = false;
-    signInForm.querySelector("button[type=submit]").disabled = true;
-    resetPasswordButton.disabled = true;
-    return;
-  }
-
-  const { createClient } = await import("https://esm.sh/@supabase/supabase-js@2.118.0");
-  supabase = createClient(config.supabaseUrl, config.supabaseAnonKey, {
-    auth: { persistSession: true, autoRefreshToken: true, detectSessionInUrl: true },
-  });
-
-  const hash = new URLSearchParams(window.location.hash.slice(1));
-  passwordLinkActive = ["invite", "recovery"].includes(hash.get("type"));
-  if (passwordLinkActive) setPasswordUpdateMode();
-
-  supabase.auth.onAuthStateChange((event, session) => {
-    window.setTimeout(() => {
-      if (event === "PASSWORD_RECOVERY" || passwordLinkActive) {
-        setPasswordUpdateMode();
-        return;
-      }
-      runSafely("Could not load your account", () => handleSession(session), authMessage);
-    }, 0);
-  });
-
-  const { data, error } = await supabase.auth.getSession();
-  if (error) throw error;
-  if (passwordLinkActive) {
-    setPasswordUpdateMode();
-  } else {
-    await handleSession(data.session);
-  }
+  loadFamily();
 }
 
-async function submitSignIn(event) {
-  event.preventDefault();
-  if (!supabase) {
-    setMessage(authMessage, "Cloud sign-in is not configured. Follow the Supabase setup instructions first.", true);
-    return;
-  }
-  const form = new FormData(signInForm);
-  const button = signInForm.querySelector("button[type=submit]");
-  button.disabled = true;
-  setMessage(authMessage, "Signing in…");
-  const { error } = await supabase.auth.signInWithPassword({
-    email: String(form.get("email")).trim(),
-    password: String(form.get("password")),
-  });
-  button.disabled = false;
-  if (error) {
-    setMessage(authMessage, error.message, true);
-    return;
-  }
-  setMessage(authMessage, "Signed in.");
-}
-
-async function sendPasswordReset() {
-  if (!supabase) {
-    setMessage(authMessage, "Cloud sign-in is not configured. Follow the Supabase setup instructions first.", true);
-    return;
-  }
-  const email = document.querySelector("#auth-email").value.trim();
-  if (!email) {
-    setMessage(authMessage, "Enter your email address first.", true);
-    document.querySelector("#auth-email").focus();
-    return;
-  }
-  resetPasswordButton.disabled = true;
-  const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: window.location.origin + window.location.pathname,
-  });
-  resetPasswordButton.disabled = false;
-  if (error) {
-    setMessage(authMessage, error.message, true);
-    return;
-  }
-  setMessage(authMessage, "If an account exists for that address, a password-reset link has been sent.");
-}
-
-async function updatePassword(event) {
-  event.preventDefault();
-  if (!supabase) return;
-  const password = document.querySelector("#new-password").value;
-  const confirmation = document.querySelector("#confirm-password").value;
-  if (password.length < 8) {
-    setMessage(authMessage, "Use at least 8 characters for the new password.", true);
-    return;
-  }
-  if (password !== confirmation) {
-    setMessage(authMessage, "The passwords do not match.", true);
-    return;
-  }
-  const button = passwordUpdateForm.querySelector("button[type=submit]");
-  button.disabled = true;
-  const { error } = await supabase.auth.updateUser({ password });
-  button.disabled = false;
-  if (error) {
-    setMessage(authMessage, error.message, true);
-    return;
-  }
-  window.history.replaceState({}, document.title, window.location.pathname + window.location.search);
-  passwordLinkActive = false;
-  resetAuthMode();
-  setMessage(authMessage, "Password saved.");
-  const { data, error: sessionError } = await supabase.auth.getSession();
-  if (sessionError) {
-    setMessage(authMessage, sessionError.message, true);
-    return;
-  }
-  await handleSession(data.session);
-}
-
-async function changeFamilyState(code) {
+function changeFamilyState(code) {
   if (!family || code === family.state_code) return;
-  const { data, error } = await supabase
-    .from("families")
-    .update({ state_code: code || null })
-    .eq("id", family.id)
-    .select("id, owner_id, state_code, grading_scale")
-    .single();
-  if (error) {
-    setMessage(appMessage, `State was not saved: ${error.message}`, true);
-    updateStateSelector();
-    return;
-  }
-  family = { ...data, grading_scale: normalizeScale(data.grading_scale) };
+  family.state_code = code || null;
+  persistFamily();
   updateStateSelector();
   setMessage(appMessage, "Family state updated. Existing student plans were kept; review or edit their requirements as needed.");
 }
@@ -738,7 +558,7 @@ function openGradingDialog() {
   el.gradingDialog.showModal();
 }
 
-async function submitStudent(event) {
+function submitStudent(event) {
   event.preventDefault();
   const form = new FormData(el.studentForm);
   const name = String(form.get("name")).trim();
@@ -748,48 +568,32 @@ async function submitStudent(event) {
     setMessage(el.studentError, "Enter a name and choose a high-school grade level.", true);
     return;
   }
-  const studentPayload = {
-    family_id: family.id,
+  const student = {
+    id: crypto.randomUUID(),
     name,
     grade_level: gradeLevel,
     graduation_year: graduationYearValue ? Number(graduationYearValue) : null,
+    created_at: new Date().toISOString(),
   };
-  const { data: student, error } = await supabase.from("students").insert(studentPayload).select().single();
-  if (error) {
-    setMessage(el.studentError, `Student was not saved: ${error.message}`, true);
-    return;
-  }
   const preset = profileRequirements(family.state_code);
-  if (preset.length) {
-    const rows = preset.map((requirement, index) => ({
-      student_id: student.id,
+  const initialRequirements = preset.map((requirement, index) => ({
+      id: crypto.randomUUID(),
       name: requirement.name,
       required_credits: requirement.credits,
       sort_order: index,
     }));
-    const { error: requirementError } = await supabase.from("requirements").insert(rows);
-    if (requirementError) {
-      const { error: cleanupError } = await supabase.from("students").delete().eq("id", student.id);
-      if (cleanupError) console.error("Could not remove the partially created student:", cleanupError);
-      setMessage(
-        el.studentError,
-        cleanupError
-          ? `The student was created but the state requirements could not be added or rolled back: ${requirementError.message}; ${cleanupError.message}`
-          : `State requirements could not be added, so the student was not kept: ${requirementError.message}`,
-        true,
-      );
-      return;
-    }
-  }
+  students.push(student);
+  recordsByStudent[student.id] = { requirements: initialRequirements, courses: [] };
+  persistFamily();
   el.studentDialog.close();
   activeStudentId = student.id;
-  await loadStudents();
+  loadStudentData();
   setMessage(appMessage, preset.length
     ? `${name}'s plan started with ${getProfile()?.name} public-school reference categories. Edit them for your family's plan.`
     : `${name} was added. Add the requirements your family will use.`);
 }
 
-async function submitCourse(event) {
+function submitCourse(event) {
   event.preventDefault();
   const student = getStudent();
   if (!student) return;
@@ -797,13 +601,16 @@ async function submitCourse(event) {
   const gradeValue = String(form.get("grade_percent")).trim();
   const gradePercent = gradeValue ? Number(gradeValue) : null;
   const course = {
-    student_id: student.id,
+    id: editingCourseId ?? crypto.randomUUID(),
     requirement_id: String(form.get("requirement_id")),
     title: String(form.get("title")).trim(),
     credits: Number(form.get("credits")),
     status: String(form.get("status")),
     grade_percent: gradePercent,
     school_year: String(form.get("school_year")).trim(),
+    created_at: editingCourseId
+      ? courses.find((item) => item.id === editingCourseId)?.created_at
+      : new Date().toISOString(),
   };
   if (!course.title || !course.school_year || !Number.isFinite(course.credits) || course.credits <= 0 ||
     !["planned", "in_progress", "completed"].includes(course.status) ||
@@ -811,20 +618,18 @@ async function submitCourse(event) {
     setMessage(el.courseError, "Check the class name, credits, school year, status, and percentage grade.", true);
     return;
   }
-  const result = editingCourseId
-    ? await supabase.from("courses").update(course).eq("id", editingCourseId).select().single()
-    : await supabase.from("courses").insert(course).select().single();
-  if (result.error) {
-    setMessage(el.courseError, `Class was not saved: ${result.error.message}`, true);
-    return;
-  }
+  courses = editingCourseId
+    ? courses.map((item) => item.id === editingCourseId ? course : item)
+    : [...courses, course];
+  recordsByStudent[student.id].courses = courses;
+  persistFamily();
   el.courseDialog.close();
   setMessage(appMessage, editingCourseId ? "Class updated." : "Class added.");
   editingCourseId = null;
-  await loadStudentData();
+  loadStudentData();
 }
 
-async function submitRequirement(event) {
+function submitRequirement(event) {
   event.preventDefault();
   const student = getStudent();
   if (!student) return;
@@ -835,21 +640,26 @@ async function submitRequirement(event) {
     setMessage(el.requirementError, "Enter a category name and a credit requirement from 0 to 100.", true);
     return;
   }
-  const payload = { student_id: student.id, name, required_credits: requiredCredits };
-  const result = editingRequirementId
-    ? await supabase.from("requirements").update(payload).eq("id", editingRequirementId).select().single()
-    : await supabase.from("requirements").insert({ ...payload, sort_order: requirements.length }).select().single();
-  if (result.error) {
-    setMessage(el.requirementError, `Requirement was not saved: ${result.error.message}`, true);
-    return;
-  }
+  const requirement = {
+    id: editingRequirementId ?? crypto.randomUUID(),
+    name,
+    required_credits: requiredCredits,
+    sort_order: editingRequirementId
+      ? getRequirement(editingRequirementId).sort_order
+      : requirements.length,
+  };
+  requirements = editingRequirementId
+    ? requirements.map((item) => item.id === editingRequirementId ? requirement : item)
+    : [...requirements, requirement];
+  recordsByStudent[student.id].requirements = requirements;
+  persistFamily();
   el.requirementDialog.close();
   setMessage(appMessage, editingRequirementId ? "Requirement updated." : "Requirement added.");
   editingRequirementId = null;
-  await loadStudentData();
+  loadStudentData();
 }
 
-async function saveGradingScale(event) {
+function saveGradingScale(event) {
   event.preventDefault();
   const form = new FormData(el.gradingForm);
   const scale = Object.fromEntries(["a", "b", "c", "d"].map((key) => [key, Number(form.get(key))]));
@@ -857,56 +667,38 @@ async function saveGradingScale(event) {
     setMessage(el.gradingError, "Cutoffs must be between 0 and 100 and descend from A to D.", true);
     return;
   }
-  const { data, error } = await supabase
-    .from("families")
-    .update({ grading_scale: scale })
-    .eq("id", family.id)
-    .select("id, owner_id, state_code, grading_scale")
-    .single();
-  if (error) {
-    setMessage(el.gradingError, `Grading scale was not saved: ${error.message}`, true);
-    return;
-  }
-  family = { ...data, grading_scale: normalizeScale(data.grading_scale) };
+  family.grading_scale = scale;
+  persistFamily();
   el.gradingDialog.close();
   renderDashboard();
   setMessage(appMessage, "Grading scale updated.");
 }
 
-async function removeCourse(course) {
+function removeCourse(course) {
   if (!window.confirm(`Delete “${course.title}” from this student's course records?`)) return;
-  const { error } = await supabase.from("courses").delete().eq("id", course.id);
-  if (error) {
-    setMessage(appMessage, `Class was not deleted: ${error.message}`, true);
-    return;
-  }
+  courses = courses.filter((item) => item.id !== course.id);
+  recordsByStudent[activeStudentId].courses = courses;
+  persistFamily();
   setMessage(appMessage, "Class deleted.");
-  await loadStudentData();
+  loadStudentData();
 }
 
-async function removeRequirement(requirement) {
+function removeRequirement(requirement) {
   const related = getCoursesForRequirement(requirement.id).length;
   const detail = related ? ` ${related} class${related === 1 ? " is" : "es are"} assigned to it and will become unassigned.` : "";
   if (!window.confirm(`Remove the “${requirement.name}” requirement?${detail}`)) return;
-  const { error } = await supabase.from("requirements").delete().eq("id", requirement.id);
-  if (error) {
-    setMessage(appMessage, `Requirement was not deleted: ${error.message}`, true);
-    return;
-  }
+  requirements = requirements.filter((item) => item.id !== requirement.id);
+  courses = courses.map((course) => course.requirement_id === requirement.id
+    ? { ...course, requirement_id: null }
+    : course);
+  recordsByStudent[activeStudentId].requirements = requirements;
+  recordsByStudent[activeStudentId].courses = courses;
+  persistFamily();
   setMessage(appMessage, "Requirement removed.");
-  await loadStudentData();
-}
-
-async function signOut() {
-  const { error } = await supabase.auth.signOut();
-  if (error) setMessage(appMessage, `Could not sign out: ${error.message}`, true);
+  loadStudentData();
 }
 
 function wireEvents() {
-  signInForm.addEventListener("submit", (event) => handleFormSubmit(event, "Sign-in failed", submitSignIn, authMessage));
-  passwordUpdateForm.addEventListener("submit", (event) => handleFormSubmit(event, "Could not update password", updatePassword, authMessage));
-  resetPasswordButton.addEventListener("click", () => runSafely("Could not send password-reset email", sendPasswordReset, authMessage));
-  document.querySelector("#sign-out").addEventListener("click", () => runSafely("Could not sign out", signOut));
   document.querySelector("#state-select").addEventListener("change", (event) => runSafely("Could not save family state", () => changeFamilyState(event.target.value)));
   document.querySelector("#add-student").addEventListener("click", openStudentDialog);
   document.querySelector("#add-student-main").addEventListener("click", openStudentDialog);
@@ -941,7 +733,8 @@ try {
   await initialize();
 } catch (error) {
   console.error("GradPath could not start:", error);
-  backendNotice.hidden = false;
-  backendNotice.textContent = `GradPath could not start: ${error.message}`;
-  setMessage(authMessage, "Some app data could not be loaded. Refresh the page or check the setup.", true);
+  setMessage(appMessage, `GradPath could not start: ${error.message}`, true);
+  document.querySelectorAll("button, input, select").forEach((control) => {
+    control.disabled = true;
+  });
 }
